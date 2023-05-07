@@ -51,16 +51,12 @@ describe('Login e registro de usuarios alura pic', () => {
     })
 
     it.only('fazer login com usuario valido', () => {
-        cy.get('input[formcontrolname="userName"]').type('flavio');
-        cy.get('input[formcontrolname="password"]').type('123');
-        cy.get('button[type="submit"]').click();
+        cy.login('flavio', 123);
         cy.contains('a', '(Logout)').should('be.visible');
     })
 
     it.only('fazer login com usuario valido', () => {
-        cy.get('input[formcontrolname="userName"]').type('jack');
-        cy.get('input[formcontrolname="password"]').type('1234');
-        cy.get('button[type="submit"]').click();
+        cy.login('Jack', 1234);
         cy.on('window:alert', str => {
             expect(str).to.equal('Invalid user name or password')
         })
