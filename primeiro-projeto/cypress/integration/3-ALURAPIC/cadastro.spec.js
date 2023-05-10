@@ -1,7 +1,7 @@
 describe('Cadastros de usuarios alura pic', () => {
 
     beforeEach(() => {
-        cy.visit('https://alura-fotos.herokuapp.com/#/home');
+        cy.visit('/');
     })
 
     it('verificar mensagens de validação', () => {
